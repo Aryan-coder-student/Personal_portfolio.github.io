@@ -1,0 +1,32 @@
+{% extends 'p1.html' %}
+{% load embed_video_tags %}
+{% block title %}Discord{% endblock title %}
+{% block body%}
+<h1 style="text-align: -webkit-center;color: antiquewhite;border-style: dotted;font-size: -webkit-xxx-large;">Youtube Recommendation for learning discord python</h1>
+<div class="album py-5 ">
+    <div class="container">
+        <div class="row">
+        {%for zz in details%}
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{zz.thumbnail}}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"></img>
+                <div class="card-body">
+                  <p class="card-text">{{zz.titles}}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href = "{{zz.ids}}" target="_blank"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                    </div>
+                    <small class="text-muted">Published = {{zz.dates}}</small>
+                    <small class="text-muted">Duration = {{zz.times}}</small>
+                  </div>
+                </div>
+              </div>
+            </div>    
+        {% endfor %}
+    </div>
+</div>
+<h1 style="text-align: -webkit-center;color: antiquewhite;border-style: dotted;font-size: -webkit-xxx-large;">Lecture from where i am learning</h1>
+{%for v in disc%}
+    <p style="float:left;padding-right: 33px;margin-left: 80px;">{%video v.discordvideo "medium"%}</p>
+{%endfor %}
+{% endblock body%}

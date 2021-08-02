@@ -1,0 +1,11 @@
+{% extends 'p1.html' %}
+{% load embed_video_tags %}
+{%block title%} Python Lectures{% endblock title%}
+{% block body %}
+
+<h1 style="color: aliceblue;text-decoration: underline;text-align: center;">Python Lectures</h1>
+    {%for v in vide%}
+            <p style="float:left;padding-right: 33px;margin-left: 80px;">{% video v.video "medium" %}</p>
+    {% endfor %}
+</div>
+{% endblock body %}
